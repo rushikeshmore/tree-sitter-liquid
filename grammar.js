@@ -459,7 +459,13 @@ module.exports = grammar({
     schema_statement: ($) =>
       seq(
         tag('schema'),
-        alias($.template_content, $.json_content),
+        repeat(
+          choice(
+            $._statement,
+            alias($.template_content, $.json_content),
+            $.comment,
+          ),
+        ),
         tag('endschema'),
       ),
 
