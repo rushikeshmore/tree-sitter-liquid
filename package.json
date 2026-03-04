@@ -48,7 +48,7 @@
     "test": "tree-sitter test",
     "lint": "eslint grammar.js",
     "lint-fix": "eslint grammar.js --fix",
-    "install": "node-gyp-build",
+    "install": "node-gyp rebuild",
     "prebuildify": "prebuildify --napi --strip"
   },
   "tree-sitter": [
